@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .cv-container {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+        
+            <h1>Danish Aulia Irawan</h1>
+            <p>Email: danishirawan001@gmail.com | Telepon: 085770007579 | Alamat: Jl.Jelutung Raya No.289,Depok</p>
+        </div>
+        
+        <div class="section">
+            <h2>Ringkasan</h2>
+            <p>Saya adalah mahasiswa teknik informatika yang memiliki minat dalam cyber security dan pengembangan perangkat lunak.</p>
+        </div>
+        
+    
+        
+        <div class="section">
+            <h2>Pendidikan</h2>
+            <ul>
+                <li>SDN Mekarjaya 18 Depok (2015)<br></li>
+                <li>SMPN 4 Depok (2021)<br></li>
+                <li>SMAN 15 Depok (2024)  |  IPA.</li>
+                <li>STT Terpadu NF (-)  |Teknik Informatika.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Keterampilan</h2>
+            <ul>
+                <li>HTML & CSS Dasar</li>
+                <li>Python Dasar</li>
+                <li>Basic Desain menggunakan Canva</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Kontak Tambahan</h2>
+            <p> GitHub: DanishAuliaIrawan</p>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const profilePic = document.getElementById('profile-pic');
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePic.src = e.target.result;
+                    profilePic.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
